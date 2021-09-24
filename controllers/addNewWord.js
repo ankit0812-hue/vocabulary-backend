@@ -7,7 +7,7 @@ exports.addNewWord = async (req, res) => {
   const word = req.body.word;
   try {
     // SEARCH FOR WORD IN EXISTING DOCUMENTS
-    const wordArray = await Dictionary.find({ word });
+    const wordArray = await Word.find({ word });
 
     // IF WORD IS ALREADY THERE IN ANY DOCUMENT, RETURN
     if (wordArray.length > 0) {
